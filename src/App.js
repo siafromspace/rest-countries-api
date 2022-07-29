@@ -20,7 +20,7 @@ function App() {
       .then(data => setAllData(data))
   }, [])
 
-  const countryCard = (searchData.length === 0) || (!dropDownData) ?
+  const countryCard = (searchData.length === 0) && (dropDownData === null) ?
     allData.map(card => {
       Object.assign(card, { id: nanoid() })
       return <Main {...card}
@@ -28,11 +28,13 @@ function App() {
     }) :
     filteredData.map(card => {
       Object.assign(card, { id: nanoid() })
-      return <Main {...card} isDark={isDark} key={card.id} />
+      return <Main {...card}
+        isDark={isDark} key={card.id} />
     })
 
 
   function searchItems(event) {
+    event.preventDefault()
     const searchInput = event.target.value
     setSearchData(searchInput)
     if (searchInput !== '') {
@@ -46,6 +48,7 @@ function App() {
   }
 
   function dropDownItems(event) {
+    event.preventDefault()
     const dropDownInput = event.target.value
     setDropDownData(dropDownInput)
 
