@@ -8,9 +8,9 @@ function Main(props) {
             </div>
             <div className="country--text">
                 <h3 className="country--name">{props.name}</h3>
-                <p>Population: <span>{props.population}</span></p>
-                <p>Region: <span>{props.region}</span></p>
-                <p>Capital: <span>{props.capital}</span></p>
+                <p>Population: <span className="gray">{props.population}</span></p>
+                <p>Region: <span className="gray">{props.region}</span></p>
+                <p>Capital: <span className="gray">{props.capital}</span></p>
             </div>
         </div>
     )

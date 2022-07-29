@@ -2,8 +2,9 @@ import React from "react"
 import Header from "./components/Header"
 import Input from "./components/Input"
 import Main from "./components/Main"
+import { nanoid } from "nanoid"
 
-function App(props) {
+function App() {
 
   const [allData, setAllData] = React.useState([])
   const [searchData, setSearchData] = React.useState('')
@@ -18,10 +19,13 @@ function App(props) {
 
   const countryCard = searchData.length === 0 ?
     allData.map(card => {
-      return <Main {...card} isDark={isDark} />
+      Object.assign(card, { id: nanoid() })
+      return <Main {...card}
+        isDark={isDark} key={card.id} />
     }) :
     filteredData.map(card => {
-      return <Main {...card} isDark={isDark} />
+      Object.assign(card, { id: nanoid() })
+      return <Main {...card} isDark={isDark} key={card.id} />
     })
 
 
@@ -45,15 +49,13 @@ function App(props) {
 
   function toggleDarkMode() {
     setIsDark(prevState => !prevState)
-
-    console.log(isDark)
   }
 
   return (
     <div className="container">
       <Header isDark={isDark} toggleDark={toggleDarkMode} />
       <Input onChange={searchItems} isDark={isDark} />
-      <section className={props.isDark ? "countries--container dark" : "countries--container"}>
+      <section className="countries--container">
         {countryCard}
       </section>
     </div>

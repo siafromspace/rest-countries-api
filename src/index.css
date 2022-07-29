@@ -30,6 +30,10 @@ body {
   background-color: var(--veryDarkBlue);
   color: white;
 }
+.gray {
+  color: var(--darkGrayInput);
+  font-weight: 300;
+}
 .header.dark {
   background-color: var(--darkBlue);
 }
@@ -101,6 +105,9 @@ select > option {
   background-color: var(--darkBlue);
   color: white;
 }
+.country--card.dark .gray {
+  color: var(--darkGrayInput);
+}
 .country--img-card {
   width:250px;
   height: 50%;
@@ -113,6 +120,12 @@ select > option {
 .country--text {
   padding: 1rem;
   height: 50%;
+}
+.country--text h3 {
+  font-weight: 800;
+}
+.country--text p {
+  font-weight: 600;
 }
 .country--name {
   margin-bottom: 1rem;
