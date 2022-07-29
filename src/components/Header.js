@@ -1,10 +1,10 @@
 import React from "react"
 
-function Header() {
+function Header(props) {
     return (
-        <header className="header">
+        <header className={props.isDark ? "header dark" : "header"}>
             <h1 className="header--title">Where in the world?</h1>
-            <p className="header--toggle"><i class="fa-regular fa-moon"></i>Dark Mode</p>
+            <p className="header--toggle" onClick={() => props.toggleDark()} ><i class="fa-regular fa-moon"></i>Dark Mode</p>
         </header>
     )
 }
