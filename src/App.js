@@ -63,7 +63,7 @@ function App() {
     } else {
       setFilteredData(allData)
     }
-  }, [dropDownData])
+  }, [dropDownData, allData])
 
   React.useEffect(() => {
     const body = document.querySelector('.body')
