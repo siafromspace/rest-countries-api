@@ -24,6 +24,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0.7rem 2rem;
+  color: var(--veryDarkBlueText);
 }
 .dark {
   background-color: var(--veryDarkBlue);
@@ -71,6 +72,9 @@ select {
 select.dark {
   background-color: var(--darkBlue);
 }
+select.dark > option {
+  background-color: var(--darkBlue);
+}
 select:focus {
   outline: none;
 }
@@ -91,6 +95,11 @@ select > option {
   width: 250px;
   height: 300px;
   box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  color: var(--veryDarkBlueText)
+}
+.country--card.dark {
+  background-color: var(--darkBlue);
+  color: white;
 }
 .country--img-card {
   width:250px;

@@ -2,7 +2,7 @@ import React from "react"
 
 function Main(props) {
     return (
-        <div className="country--card">
+        <div className={props.isDark ? "country--card dark" : "country--card"}>
             <div className="country--img-card">
                 <img src={props.flag} className="country--img" alt="flag" />
             </div>

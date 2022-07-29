@@ -38,15 +38,13 @@ function App(props) {
     }
   }
 
-  function toggleDarkMode() {
-    setIsDark(prevState => {
-      const body = document.querySelector('.body')
-      if (isDark === true) {
-        body.classList.add('dark')
-      }
-      return !prevState
+  React.useEffect(() => {
+    const body = document.querySelector('.body')
+    body.classList.toggle('dark')
+  }, [isDark])
 
-    })
+  function toggleDarkMode() {
+    setIsDark(prevState => !prevState)
 
     console.log(isDark)
   }
