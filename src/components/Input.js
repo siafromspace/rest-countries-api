@@ -1,10 +1,19 @@
 import React from "react";
+// import useFetch from "./useFetch";
 
-function Input(props) {
+function Input() {
+
+    // const { allData } = useFetch("https://restcountries.com/v2/all?fields=name,capital,population,region,flag")
+
+
+
     return (
-        <form className={props.isDark ? "dark" : ""}>
-            <input type="text" placeholder="&#xF002; Search for a country ..." style={{ fontFamily: "FontAwesome", fontStyle: "Normal" }} onChange={(event) => props.onChange(event)} className={props.isDark ? "dark" : ""} />
-            <select name="continents" className={props.isDark ? "dark" : ""} onChange={(event) => props.dropDown(event)} >
+        <form>
+            <input
+                type="text"
+                placeholder="&#xF002; Search for a country ..." style={{ fontFamily: "FontAwesome", fontStyle: "Normal" }}
+            />
+            <select>
                 <option value="">Filter By Region</option>
                 <option value="africa">Africa</option>
                 <option value="asia">Asia</option>

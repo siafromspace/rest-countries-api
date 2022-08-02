@@ -15,7 +15,7 @@
 body {
   height: 100vh;
   width: 100vw;
-  background-color: var(--lightGrayBg);
+  
   font-family: 'Nunito Sans', sans-serif;
 }
 .header {
@@ -25,6 +25,11 @@ body {
   align-items: center;
   padding: 0.7rem 2rem;
   color: var(--veryDarkBlueText);
+  border-bottom: 2px solid var(--lightGrayBg);
+}
+
+a {
+  text-decoration: none;
 }
 .dark {
   background-color: var(--veryDarkBlue);
@@ -43,6 +48,14 @@ body {
 .header--toggle {
   cursor: pointer;
   font-size: 0.9rem;
+}
+.index-main {
+  background-color: var(--lightGrayBg);
+}
+.main-two {
+  background-color: white;
+  padding: 3rem 2rem;
+  position: relative;
 }
 form {
   padding:  1.5rem 2rem;
@@ -92,6 +105,13 @@ select > option {
   align-items: center;
   justify-items: center;
   gap: 2rem; 
+  position: relative;
+}
+.loading {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 150%);
 }
 .country--card {
   background-color: white;
@@ -99,7 +119,8 @@ select > option {
   width: 250px;
   height: 300px;
   box-shadow: 0 0 5px rgba(0,0,0,0.05);
-  color: var(--veryDarkBlueText)
+  color: var(--veryDarkBlueText);
+  cursor: pointer;
 }
 .country--card.dark {
   background-color: var(--darkBlue);
@@ -130,15 +151,89 @@ select > option {
 .country--name {
   margin-bottom: 1rem;
 }
+
+.main-two > a {
+  width: fit-content;
+  margin-bottom: 3rem;
+  background-color: white;
+  border: 2px solid var(--lightGrayBg);
+  padding: 0.3rem 2rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.main-two > a:active {
+  color: var(--veryDarkBlueText);
+  transform: scale(0.95);
+}
+.main-two .details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  align-items: center;
+  /* justify-items: center; */
+}
+.details--logo img {
+  width: 100%;
+  height: 100%;
+}
+.details--container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.details--text {
+  display: flex;
+  justify-content: space-between;
+}
+.details--text > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.details--container p {
+  font-weight: 600;
+}
+
 @media(max-width: 1200px) {
   .countries--container {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 1024px) {
+  .main-two .details {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .details--container {
+    padding-left: 10%;
+  }
+  .details--text {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.2rem;
+    
+  }
+  .details--logo {
+    display: flex;
+    justify-content: center;
+  }
+  .details--logo img {
+    width: 80%;
+    height: 80%;
   }
 }
 @media(max-width: 824px) {
   .countries--container {
     grid-template-columns: repeat(2, 1fr);
   }
+  .details--container {
+    padding-left: 0;
+  }
+  .details--logo img {
+    width: 100%;
+    height: 100%;
+  }
+  
 }
 @media(max-width: 568px) {
   .countries--container {
@@ -149,6 +244,7 @@ select > option {
     justify-content: flex-start;
     gap: 1rem;
   }
+  
 }
 
 
